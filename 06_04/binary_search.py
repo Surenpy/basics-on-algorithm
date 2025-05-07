@@ -2,9 +2,19 @@ import random
 
 
 def binary_search(data, target):
-    pass
+    low = 0
+    high = len(data)-1
+    while (low <= high):
+        mid = (low + high) // 2
+        if (data[mid]==target):
+            return mid
+        elif (data[mid] < target):
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
 
-
+# [1,10,15,17,19,20,25]
 n = 10
 max_val = 100
 data = [random.randint(1, max_val) for i in range(n)]
